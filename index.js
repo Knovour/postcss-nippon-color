@@ -265,7 +265,7 @@ module.exports = postcss.plugin('postcss-nippon-color', () =>
           : list[Math.floor(Math.random() * list.length)];
 
         if(target && target.toUpperCase() in palette)
-          decl.value = palette[target.toUpperCase()];
+          decl.value = decl.value.replace(/nippon\-color\(([a-zA-Z]*)\)/, palette[target.toUpperCase()]);
       }
     })
   )
